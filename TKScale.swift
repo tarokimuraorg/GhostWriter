@@ -11,69 +11,69 @@ enum TKScale {
     
     enum Major {
         
-        case Cmajor
-        case CSharpMajor
-        case Dmajor
-        case EFlatMajor
-        case Emajor
-        case Fmajor
-        case FSharpMajor
-        case Gmajor
-        case AFlatMajor
-        case Amajor
-        case BFlatMajor
-        case Bmajor
+        case C
+        case CSharp
+        case D
+        case EFlat
+        case E
+        case F
+        case FSharp
+        case G
+        case AFlat
+        case A
+        case BFlat
+        case B
         
     }
 
     enum NaturalMinor {
         
-        case Cminor
-        case CSharpMinor
-        case Dminor
-        case EFlatMinor
-        case Eminor
-        case Fminor
-        case FSharpMinor
-        case Gminor
-        case AFlatMinor
-        case Aminor
-        case BFlatMinor
-        case Bminor
+        case C
+        case CSharp
+        case D
+        case EFlat
+        case E
+        case F
+        case FSharp
+        case G
+        case AFlat
+        case A
+        case BFlat
+        case B
         
     }
 
     enum HarmonicMinor {
         
-        case Cminor
-        case CSharpMinor
-        case Dminor
-        case EFlatMinor
-        case Eminor
-        case Fminor
-        case FSharpMinor
-        case Gminor
-        case AFlatMinor
-        case Aminor
-        case BFlatMinor
-        case Bminor
+        case C
+        case CSharp
+        case D
+        case EFlat
+        case E
+        case F
+        case FSharp
+        case G
+        case AFlat
+        case A
+        case BFlat
+        case B
         
     }
 
     enum MelodicMinor {
         
-        case Cminor
-        case CSharpMinor
-        case Dminor
-        case EFlatMinor
-        case Eminor
-        case Fminor
-        case FSharpMinor
-        case Gminor
-        case AFlatMinor
-        case Aminor
-        case BFlatMinor
-        case Bminor
+        case C
+        case CSharp
+        case D
+        case EFlat
+        case E
+        case F
+        case FSharp
+        case G
+        case AFlat
+        case A
+        case BFlat
+        case B
         
     }
     

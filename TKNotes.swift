@@ -13,29 +13,29 @@ class TKNotes : TKNotesProtocol {
         
         switch scale {
             
-        case TKScale.Major.Cmajor:
+        case TKScale.Major.C:
             return ["C","D","E","F","G","A","B"]
-        case TKScale.Major.CSharpMajor:
+        case TKScale.Major.CSharp:
             return ["C#","D#","F","F#","G#","A#","C"]
-        case TKScale.Major.Dmajor:
+        case TKScale.Major.D:
             return ["D","E","F#","G","A","B","C#"]
-        case TKScale.Major.EFlatMajor:
+        case TKScale.Major.EFlat:
             return ["E♭","F","G","A♭","B♭","C","D"]
-        case TKScale.Major.Emajor:
+        case TKScale.Major.E:
             return ["E","F#","G#","A","B","C#","D#"]
-        case TKScale.Major.Fmajor:
+        case TKScale.Major.F:
             return ["F","G","A","B♭","C","D","E"]
-        case TKScale.Major.FSharpMajor:
+        case TKScale.Major.FSharp:
             return ["F#","G#","A#","B","C#","D#","F"]
-        case TKScale.Major.Gmajor:
+        case TKScale.Major.G:
             return ["G","A","B","C","D","E","F#"]
-        case TKScale.Major.AFlatMajor:
+        case TKScale.Major.AFlat:
             return ["A♭","B♭","C","D♭","E♭","F","G"]
-        case TKScale.Major.Amajor:
+        case TKScale.Major.A:
             return ["A","B","C#","D","E","F#","G#"]
-        case TKScale.Major.BFlatMajor:
+        case TKScale.Major.BFlat:
             return ["B♭","C","D","E♭","F","G","A"]
-        case TKScale.Major.Bmajor:
+        case TKScale.Major.B:
             return ["B","C#","D#","E","F#","G#","A#"]
             
         }
@@ -46,29 +46,29 @@ class TKNotes : TKNotesProtocol {
         
         switch scale {
             
-        case TKScale.NaturalMinor.Cminor:
+        case TKScale.NaturalMinor.C:
             return ["C","D","E♭","F","G","A♭","B♭"]
-        case TKScale.NaturalMinor.CSharpMinor:
+        case TKScale.NaturalMinor.CSharp:
             return ["C#","D#","E","F#","G#","A","B"]
-        case TKScale.NaturalMinor.Dminor:
+        case TKScale.NaturalMinor.D:
             return ["D","E","F","G","A","B♭","C"]
-        case TKScale.NaturalMinor.EFlatMinor:
+        case TKScale.NaturalMinor.EFlat:
             return ["E♭","F","G♭","A♭","B♭","B","D♭"]
-        case TKScale.NaturalMinor.Eminor:
+        case TKScale.NaturalMinor.E:
             return ["E","F#","G","A","B","C","D"]
-        case TKScale.NaturalMinor.Fminor:
+        case TKScale.NaturalMinor.F:
             return ["F","G","A♭","B♭","C","D♭","E♭"]
-        case TKScale.NaturalMinor.FSharpMinor:
+        case TKScale.NaturalMinor.FSharp:
             return ["F#","G#","A","B","C#","D","E"]
-        case TKScale.NaturalMinor.Gminor:
+        case TKScale.NaturalMinor.G:
             return ["G","A","B♭","C","D","E♭","F"]
-        case TKScale.NaturalMinor.AFlatMinor:
+        case TKScale.NaturalMinor.AFlat:
             return ["A♭","B♭","B","D♭","E♭","E","G♭"]
-        case TKScale.NaturalMinor.Aminor:
+        case TKScale.NaturalMinor.A:
             return ["A","B","C","D","E","F","G"]
-        case TKScale.NaturalMinor.BFlatMinor:
+        case TKScale.NaturalMinor.BFlat:
             return ["B♭","C","D♭","E♭","F","G♭","A♭"]
-        case TKScale.NaturalMinor.Bminor:
+        case TKScale.NaturalMinor.B:
             return ["B","C#","D","E","F#","G","A"]
         
         }
@@ -79,29 +79,29 @@ class TKNotes : TKNotesProtocol {
         
         switch scale {
             
-        case TKScale.HarmonicMinor.Cminor:
+        case TKScale.HarmonicMinor.C:
             return ["C","D","E♭","F","G","A♭","B"]
-        case TKScale.HarmonicMinor.CSharpMinor:
+        case TKScale.HarmonicMinor.CSharp:
             return ["C#","D#","E","F#","G#","A","C"]
-        case TKScale.HarmonicMinor.Dminor:
+        case TKScale.HarmonicMinor.D:
             return ["D","E","F","G","A","B♭","C#"]
-        case TKScale.HarmonicMinor.EFlatMinor:
+        case TKScale.HarmonicMinor.EFlat:
             return ["E♭","F","G♭","A♭","B♭","B","D"]
-        case TKScale.HarmonicMinor.Eminor:
+        case TKScale.HarmonicMinor.E:
             return ["E","F#","G","A","B","C","D#"]
-        case TKScale.HarmonicMinor.Fminor:
+        case TKScale.HarmonicMinor.F:
             return ["F","G","A♭","B♭","C","D♭","E"]
-        case TKScale.HarmonicMinor.FSharpMinor:
+        case TKScale.HarmonicMinor.FSharp:
             return ["F#","G#","A","B","C#","D","F"]
-        case TKScale.HarmonicMinor.Gminor:
+        case TKScale.HarmonicMinor.G:
             return ["G","A","B♭","C","D","E♭","F#"]
-        case TKScale.HarmonicMinor.AFlatMinor:
+        case TKScale.HarmonicMinor.AFlat:
             return ["A♭","B♭","B","D♭","E♭","E","G"]
-        case TKScale.HarmonicMinor.Aminor:
+        case TKScale.HarmonicMinor.A:
             return ["A","B","C","D","E","F","G#"]
-        case TKScale.HarmonicMinor.BFlatMinor:
+        case TKScale.HarmonicMinor.BFlat:
             return ["B♭","C","D♭","E♭","F","G♭","A"]
-        case TKScale.HarmonicMinor.Bminor:
+        case TKScale.HarmonicMinor.B:
             return ["B","C#","D","E","F#","G","A#"]
             
         }
@@ -112,29 +112,29 @@ class TKNotes : TKNotesProtocol {
         
         switch scale {
             
-        case TKScale.MelodicMinor.Cminor:
+        case TKScale.MelodicMinor.C:
             return ["C","D","E♭","F","G","A","B"]
-        case TKScale.MelodicMinor.CSharpMinor:
+        case TKScale.MelodicMinor.CSharp:
             return ["C#","D#","E","F#","G#","A#","C"]
-        case TKScale.MelodicMinor.Dminor:
+        case TKScale.MelodicMinor.D:
             return ["D","E","F","G","A","B","C#"]
-        case TKScale.MelodicMinor.EFlatMinor:
+        case TKScale.MelodicMinor.EFlat:
             return ["E♭","F","G♭","A♭","B♭","C","D"]
-        case TKScale.MelodicMinor.Eminor:
+        case TKScale.MelodicMinor.E:
             return ["E","F#","G","A","B","C#","D#"]
-        case TKScale.MelodicMinor.Fminor:
+        case TKScale.MelodicMinor.F:
             return ["F","G","A♭","B♭","C","D","E"]
-        case TKScale.MelodicMinor.FSharpMinor:
+        case TKScale.MelodicMinor.FSharp:
             return ["F#","G#","A","B","C#","D#","F"]
-        case TKScale.MelodicMinor.Gminor:
+        case TKScale.MelodicMinor.G:
             return ["G","A","B♭","C","D","E","F#"]
-        case TKScale.MelodicMinor.AFlatMinor:
+        case TKScale.MelodicMinor.AFlat:
             return ["A♭","B♭","B","D♭","E♭","F","G"]
-        case TKScale.MelodicMinor.Aminor:
+        case TKScale.MelodicMinor.A:
             return ["A","B","C","D","E","F#","G#"]
-        case TKScale.MelodicMinor.BFlatMinor:
+        case TKScale.MelodicMinor.BFlat:
             return ["B♭","C","D♭","E♭","F","G","A"]
-        case TKScale.MelodicMinor.Bminor:
+        case TKScale.MelodicMinor.B:
             return ["B","C#","D","E","F#","G#","A#"]
             
         }
