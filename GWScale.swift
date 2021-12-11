@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum TKScale {
+enum GWScale {
     
     enum Major {
         

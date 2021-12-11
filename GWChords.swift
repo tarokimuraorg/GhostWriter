@@ -1,5 +1,5 @@
 //
-//  TKChords.swift
+//  GWChords.swift
 //  GhostWriter
 //
 //  Created by Taro Kimura on 2021/11/27.
@@ -7,12 +7,12 @@
 
 import Foundation
 
-class TKChords : TKNotesProtocol {
+class GWChords : GWNotesProtocol {
     
-    public static func from(_ scale : TKScale.Major) -> [String] {
+    public static func from(_ scale : GWScale.Major) -> [String] {
         
         var chords : [String] = []
-        let notes = TKNotes.from(scale)
+        let notes = GWNotes.from(scale)
         
         if (notes.count == 7) {
         
@@ -30,10 +30,10 @@ class TKChords : TKNotesProtocol {
         
     }
     
-    public static func from(_ scale : TKScale.NaturalMinor) -> [String] {
+    public static func from(_ scale : GWScale.NaturalMinor) -> [String] {
         
         var chords : [String] = []
-        let notes = TKNotes.from(scale)
+        let notes = GWNotes.from(scale)
         
         if (notes.count == 7) {
         
@@ -51,10 +51,10 @@ class TKChords : TKNotesProtocol {
         
     }
     
-    public static func from(_ scale : TKScale.HarmonicMinor) -> [String] {
+    public static func from(_ scale : GWScale.HarmonicMinor) -> [String] {
         
         var chords : [String] = []
-        let notes = TKNotes.from(scale)
+        let notes = GWNotes.from(scale)
         
         if (notes.count == 7) {
         
@@ -72,10 +72,10 @@ class TKChords : TKNotesProtocol {
         
     }
     
-    public static func from(_ scale : TKScale.MelodicMinor) -> [String] {
+    public static func from(_ scale : GWScale.MelodicMinor) -> [String] {
         
         var chords : [String] = []
-        let notes = TKNotes.from(scale)
+        let notes = GWNotes.from(scale)
         
         if (notes.count == 7) {
         
