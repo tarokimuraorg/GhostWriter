@@ -13,7 +13,7 @@ class GWRelativeKey : GWMinorScaleProtocol {
     public var harmonic_minor_scale : GWScale.HarmonicMinor
     public var melodic_minor_scale : GWScale.MelodicMinor
     
-    init(major_scale : GWScale.Major) {
+    init(_ major_scale : GWScale.Major) {
         
         switch major_scale {
             
