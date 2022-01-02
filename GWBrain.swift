@@ -19,7 +19,7 @@ class GWBrain {
     private var parallel_harmonic_minor_chords : [String]
     private var parallel_melodic_minor_chords : [String]
     
-    init(major_scale : GWScale.Major) {
+    init(_ major_scale : GWScale.Major) {
         
         let relative_natural_minor_scale = GWRelativeKey(major_scale).natural_minor_scale
         let relative_harmonic_minor_scale = GWRelativeKey(major_scale).harmonic_minor_scale
@@ -39,6 +39,18 @@ class GWBrain {
         self.parallel_harmonic_minor_chords = GWChords.from(parallel_harmonic_minor_scale)
         self.parallel_melodic_minor_chords = GWChords.from(parallel_melodic_minor_scale)
         
+    }
+    
+    // major : I -> IV
+    public var pattern1 : GWSeed {
+        let seed = GWSeed(head_chord: self.major_chords[0], tail_chord: self.major_chords[3])
+        return seed
+    }
+    
+    // major : I -> V
+    public var pattern2 : GWSeed {
+        let seed = GWSeed(head_chord: self.major_chords[0], tail_chord: self.major_chords[4])
+        return seed
     }
     
 }
