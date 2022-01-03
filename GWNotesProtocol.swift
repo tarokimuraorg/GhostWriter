@@ -8,8 +8,10 @@
 import Foundation
 
 protocol GWNotesProtocol {
+    
     static func from(_ scale : GWScale.Major) -> [String]
     static func from(_ scale : GWScale.NaturalMinor) -> [String]
     static func from(_ scale : GWScale.HarmonicMinor) -> [String]
     static func from(_ scale : GWScale.MelodicMinor) -> [String]
+    
 }

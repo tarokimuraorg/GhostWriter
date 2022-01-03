@@ -7,89 +7,37 @@
 
 import Foundation
 
-class GWChords : GWNotesProtocol {
+class GWChords : GWChordsProtocol {
     
-    public static func from(_ scale : GWScale.Major) -> [String] {
+    public static func from(_ scale : GWScale.Major) -> GWDegrees {
         
-        var chords : [String] = []
         let notes = GWNotes.from(scale)
         
-        if (notes.count == 7) {
-        
-            chords.append(notes[0])
-            chords.append(notes[1] + "m")
-            chords.append(notes[2] + "m")
-            chords.append(notes[3])
-            chords.append(notes[4])
-            chords.append(notes[5] + "m")
-            chords.append(notes[6] + "m7-5")
-            
-        }
-        
-        return chords
+        return GWDegrees(I: notes[0], II: notes[1] + "m", III: notes[2] + "m", IV: notes[3], V: notes[4], VI: notes[5] + "m", VII: notes[6] + "m7-5")
         
     }
     
-    public static func from(_ scale : GWScale.NaturalMinor) -> [String] {
-        
-        var chords : [String] = []
+    public static func from(_ scale : GWScale.NaturalMinor) -> GWDegrees {
+
         let notes = GWNotes.from(scale)
         
-        if (notes.count == 7) {
-        
-            chords.append(notes[0] + "m")
-            chords.append(notes[1] + "m7-5")
-            chords.append(notes[2])
-            chords.append(notes[3] + "m")
-            chords.append(notes[4] + "m")
-            chords.append(notes[5])
-            chords.append(notes[6])
-            
-        }
-        
-        return chords
+        return GWDegrees(I: notes[0] + "m", II: notes[1] + "m7-5", III: notes[2], IV: notes[3] + "m", V: notes[4] + "m", VI: notes[5], VII: notes[6])
         
     }
     
-    public static func from(_ scale : GWScale.HarmonicMinor) -> [String] {
+    public static func from(_ scale : GWScale.HarmonicMinor) -> GWDegrees{
         
-        var chords : [String] = []
         let notes = GWNotes.from(scale)
         
-        if (notes.count == 7) {
-        
-            chords.append(notes[0] + "m")
-            chords.append(notes[1] + "m7-5")
-            chords.append(notes[2] + "aug")
-            chords.append(notes[3] + "m")
-            chords.append(notes[4])
-            chords.append(notes[5])
-            chords.append(notes[6] + "dim")
-            
-        }
-        
-        return chords
+        return GWDegrees(I: notes[0] + "m", II: notes[1] + "m7-5", III: notes[2] + "aug", IV: notes[3] + "m", V: notes[4], VI: notes[5], VII: notes[6] + "dim")
         
     }
     
-    public static func from(_ scale : GWScale.MelodicMinor) -> [String] {
+    public static func from(_ scale : GWScale.MelodicMinor) -> GWDegrees {
         
-        var chords : [String] = []
         let notes = GWNotes.from(scale)
         
-        if (notes.count == 7) {
-        
-            chords.append(notes[0] + "m")
-            chords.append(notes[1] + "m")
-            chords.append(notes[2] + "aug")
-            chords.append(notes[3])
-            chords.append(notes[4])
-            chords.append(notes[5] + "m7-5")
-            chords.append(notes[6] + "m7-5")
-            
-        }
-        
-        return chords
+        return GWDegrees(I: notes[0] + "m", II: notes[1] + "m", III: notes[2] + "aug", IV: notes[3], V: notes[4], VI: notes[5] + "m7-5", VII: notes[6] + "m7-5")
         
     }
     
