@@ -216,4 +216,111 @@ class GWBrain {
         return GWSeed(head_chord: self.parallel_melodic_minor_chords.V, tail_chord: self.parallel_melodic_minor_chords.I)
     }
     
+    // major : I -> III
+    public var seed36 : GWSeed {
+        return GWSeed(head_chord: self.major_chords.I, tail_chord: self.major_chords.III)
+    }
+    
+    // major : I -> VI
+    public var seed37 : GWSeed {
+        return GWSeed(head_chord: self.major_chords.I, tail_chord: self.major_chords.VI)
+    }
+    
+    // major : IV -> II
+    public var seed38 : GWSeed {
+        return GWSeed(head_chord: self.major_chords.IV, tail_chord: self.major_chords.II)
+    }
+    
+    public var genetically_modified_seeds : [GWSeed] {
+        
+        var storehouse : [[GWSeed]] = [[]]
+        var gmseeds : [GWSeed] = []
+        
+        // major : I -> IV
+        var seed = self.seed1
+        
+        // T -> IV
+        var gmseed = GWSeed(head_chord: self.major_chords.III, tail_chord: seed.tail_chord)
+        
+        gmseeds.append(gmseed)
+        gmseed.head_chord = self.major_chords.VI
+        gmseeds.append(gmseed)
+        
+        // T -> II
+        for gm in gmseeds {
+            gmseed = GWSeed(head_chord: gm.head_chord, tail_chord: self.major_chords.II)
+            gmseeds.append(gmseed)
+        }
+        
+        // I -> II
+        gmseed = GWSeed(head_chord: seed.head_chord, tail_chord: self.major_chords.II)
+        gmseeds.append(gmseed)
+        
+        storehouse.append(gmseeds)
+        gmseeds = []
+        
+        // major : I -> V
+        gmseed = self.seed2
+        
+        // T -> V
+        gmseed.head_chord = self.major_chords.III
+        gmseeds.append(gmseed)
+        gmseed.head_chord = self.major_chords.VI
+        gmseeds.append(gmseed)
+        
+        storehouse.append(gmseeds)
+        gmseeds = []
+        
+        // major : IV -> I
+        seed = self.seed3
+        
+        // IV -> T
+        gmseed = GWSeed(head_chord: seed.head_chord, tail_chord: self.major_chords.III)
+        gmseeds.append(gmseed)
+        gmseed.tail_chord = self.major_chords.VI
+        gmseeds.append(gmseed)
+        
+        // II -> T
+        for gm in gmseeds {
+            gmseed = GWSeed(head_chord: self.major_chords.II, tail_chord: gm.tail_chord)
+            gmseeds.append(gmseed)
+        }
+        
+        // II -> I
+        gmseed = GWSeed(head_chord: self.major_chords.II, tail_chord: seed.tail_chord)
+        gmseeds.append(gmseed)
+        
+        storehouse.append(gmseeds)
+        gmseeds = []
+        
+        // major : IV -> V
+        gmseed = self.seed4
+        
+        // II -> V
+        gmseed.head_chord = self.major_chords.II
+        gmseeds.append(gmseed)
+        
+        storehouse.append(gmseeds)
+        gmseeds = []
+        
+        // major : V -> I
+        gmseed = self.seed5
+        
+        // V -> T
+        gmseed.tail_chord = self.major_chords.III
+        gmseeds.append(gmseed)
+        gmseed.tail_chord = self.major_chords.VI
+        gmseeds.append(gmseed)
+        
+        storehouse.append(gmseeds)
+        gmseeds = []
+        
+        for gms in storehouse {
+            gmseeds += gms
+        }
+        
+        return gmseeds
+        
+    }
+    
 }
