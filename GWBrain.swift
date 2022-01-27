@@ -241,6 +241,11 @@ class GWBrain {
         return GWSeed(head_chord: self.relative_harmonic_minor_chords.V, tail_chord: self.relative_harmonic_minor_chords.VII)
     }
     
+    // relative melodic minor : IV -> II
+    private var seed41 : GWSeed {
+        return GWSeed(head_chord: self.relative_melodic_minor_chords.IV, tail_chord: self.relative_melodic_minor_chords.II)
+    }
+    
     public var genetically_modified_seeds : [GWSeed] {
         
         var gmseeds = major_tonic_convertor()
@@ -249,6 +254,8 @@ class GWBrain {
         gmseeds += relative_harmonic_minor_tonic_convertor()
         gmseeds += relative_harmonic_minor_subdominant_convertor()
         gmseeds += relative_harmonic_minor_dominant_convertor()
+        gmseeds += relative_melodic_minor_tonic_convertor()
+        gmseeds += relative_melodic_minor_subdominant_convertor()
         
         return gmseeds
         
@@ -302,7 +309,7 @@ class GWBrain {
         
         var outGMSeeds : [GWSeed] = []
         
-        // major minor : T -> IV
+        // major : T -> IV
         var inGMSeeds = gmseeds.filter{
             ($0.head_chord == self.major_chords.III && $0.tail_chord == self.major_chords.IV)
             || ($0.head_chord == self.major_chords.VI && $0.tail_chord == self.major_chords.IV)
@@ -353,7 +360,7 @@ class GWBrain {
         
         var gmseeds : [GWSeed] = []
         
-        // relative harmonic major : I -> IV
+        // relative harmonic minor : I -> IV
         var seed = self.seed16
         
         // III -> IV
@@ -457,6 +464,79 @@ class GWBrain {
         
         // VI -> VII
         seed.head_chord = self.relative_harmonic_minor_chords.VI
+        gmseeds.append(seed)
+        
+        return gmseeds
+        
+    }
+    
+    private func relative_melodic_minor_tonic_convertor() -> [GWSeed] {
+        
+        var gmseeds : [GWSeed] = []
+        
+        // relative melodic minor : I -> IV
+        var seed = self.seed26
+        
+        // III -> IV
+        seed.head_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        // relative melodic minor : I -> V
+        seed = self.seed27
+        
+        // III -> V
+        seed.head_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        // relative melodic minor : IV -> I
+        seed = self.seed28
+        
+        // IV -> III
+        seed.tail_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        // relative melodic minor : V -> I
+        seed = self.seed30
+        
+        // V -> III
+        seed.tail_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        return gmseeds
+        
+    }
+    
+    private func relative_melodic_minor_subdominant_convertor() -> [GWSeed] {
+        
+        var gmseeds : [GWSeed] = []
+        
+        // relative melodic minor : I -> IV
+        var seed = self.seed26
+        
+        // I -> II
+        seed.tail_chord = self.relative_melodic_minor_chords.II
+        gmseeds.append(seed)
+        
+        // III -> II
+        seed.head_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        // relative melodic minor : IV -> I
+        seed = self.seed28
+        
+        // II -> I
+        seed.head_chord = self.relative_melodic_minor_chords.II
+        gmseeds.append(seed)
+        
+        // II -> III
+        seed.tail_chord = self.relative_melodic_minor_chords.III
+        gmseeds.append(seed)
+        
+        // relative melodic minor : IV -> V
+        seed = self.seed29
+        
+        // II -> V
+        seed.head_chord = self.relative_melodic_minor_chords.II
         gmseeds.append(seed)
         
         return gmseeds
