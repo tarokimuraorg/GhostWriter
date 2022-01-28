@@ -246,6 +246,21 @@ class GWBrain {
         return GWSeed(head_chord: self.relative_melodic_minor_chords.IV, tail_chord: self.relative_melodic_minor_chords.II)
     }
     
+    // parallel natural minor : I -> III
+    private var seed42 : GWSeed {
+        return GWSeed(head_chord: self.parallel_natural_minor_chords.I, tail_chord: self.parallel_natural_minor_chords.III)
+    }
+    
+    // parallel natural minor : IV -> VI
+    private var seed43 : GWSeed {
+        return GWSeed(head_chord: self.parallel_natural_minor_chords.IV, tail_chord: self.parallel_natural_minor_chords.VI)
+    }
+    
+    // parallel natural minor : V -> VII
+    private var seed44 : GWSeed {
+        return GWSeed(head_chord: self.parallel_natural_minor_chords.V, tail_chord: self.parallel_natural_minor_chords.VII)
+    }
+    
     public var genetically_modified_seeds : [GWSeed] {
         
         var gmseeds = major_tonic_convertor()
@@ -256,6 +271,9 @@ class GWBrain {
         gmseeds += relative_harmonic_minor_dominant_convertor()
         gmseeds += relative_melodic_minor_tonic_convertor()
         gmseeds += relative_melodic_minor_subdominant_convertor()
+        gmseeds += parallel_natural_minor_tonic_convertor()
+        gmseeds += parallel_natural_minor_subdominant_convertor()
+        gmseeds += parallel_natural_minor_dominant_convertor()
         
         return gmseeds
         
@@ -537,6 +555,120 @@ class GWBrain {
         
         // II -> V
         seed.head_chord = self.relative_melodic_minor_chords.II
+        gmseeds.append(seed)
+        
+        return gmseeds
+        
+    }
+    
+    private func parallel_natural_minor_tonic_convertor() -> [GWSeed] {
+        
+        var gmseeds : [GWSeed] = []
+        
+        // parallel natural minor : I -> IV
+        var seed = self.seed11
+        
+        // III -> IV
+        seed.head_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : I -> V
+        seed = self.seed12
+        
+        // III -> V
+        seed.head_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : IV -> I
+        seed = self.seed13
+        
+        // IV -> III
+        seed.tail_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : V -> I
+        seed = self.seed15
+        
+        // V -> III
+        seed.tail_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        return gmseeds
+        
+    }
+    
+    private func parallel_natural_minor_subdominant_convertor() -> [GWSeed] {
+        
+        var gmseeds : [GWSeed] = []
+        
+        // parallel natural minor : I -> IV
+        var seed = self.seed11
+        
+        // I -> VI
+        seed.tail_chord = self.parallel_natural_minor_chords.VI
+        gmseeds.append(seed)
+        
+        // III -> VI
+        seed.head_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : IV -> I
+        seed = self.seed13
+        
+        // VI -> I
+        seed.head_chord = self.parallel_natural_minor_chords.VI
+        gmseeds.append(seed)
+        
+        // VI -> III
+        seed.tail_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : IV -> V
+        seed = self.seed14
+        
+        // VI -> V
+        seed.head_chord = self.parallel_natural_minor_chords.VI
+        gmseeds.append(seed)
+        
+        return gmseeds
+        
+    }
+    
+    private func parallel_natural_minor_dominant_convertor() -> [GWSeed] {
+        
+        var gmseeds : [GWSeed] = []
+        
+        // parallel natural minor : I -> V
+        var seed = self.seed12
+        
+        // I -> VII
+        seed.tail_chord = self.parallel_natural_minor_chords.VII
+        gmseeds.append(seed)
+        
+        // III -> VII
+        seed.head_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : V -> I
+        seed = self.seed15
+        
+        // VII -> I
+        seed.head_chord = self.parallel_natural_minor_chords.VII
+        gmseeds.append(seed)
+        
+        // VII -> III
+        seed.tail_chord = self.parallel_natural_minor_chords.III
+        gmseeds.append(seed)
+        
+        // parallel natural minor : IV -> V
+        seed = self.seed14
+        
+        // IV -> VII
+        seed.tail_chord = self.parallel_natural_minor_chords.VII
+        gmseeds.append(seed)
+        
+        // VI -> VII
+        seed.head_chord = self.parallel_natural_minor_chords.VI
         gmseeds.append(seed)
         
         return gmseeds
