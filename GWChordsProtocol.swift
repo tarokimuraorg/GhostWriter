@@ -9,9 +9,9 @@ import Foundation
 
 protocol GWChordsProtocol {
     
-    static func from(_ scale : GWScale.Major) -> GWDegrees
-    static func from(_ scale : GWScale.NaturalMinor) -> GWDegrees
-    static func from(_ scale : GWScale.HarmonicMinor) -> GWDegrees
-    static func from(_ scale : GWScale.MelodicMinor) -> GWDegrees
+    static func of(_ scale : GWScale.Major) -> GWDegrees
+    static func of(_ scale : GWScale.NaturalMinor) -> GWDegrees
+    static func of(_ scale : GWScale.HarmonicMinor) -> GWDegrees
+    static func of(_ scale : GWScale.MelodicMinor) -> GWDegrees
     
 }

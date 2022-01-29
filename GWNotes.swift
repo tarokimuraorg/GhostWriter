@@ -9,7 +9,7 @@ import Foundation
 
 class GWNotes : GWNotesProtocol {
     
-    public static func from(_ scale : GWScale.Major) -> [String] {
+    public static func of(_ scale : GWScale.Major) -> [String] {
         
         switch scale {
             
@@ -42,7 +42,7 @@ class GWNotes : GWNotesProtocol {
             
     }
     
-    public static func from(_ scale : GWScale.NaturalMinor) -> [String] {
+    public static func of(_ scale : GWScale.NaturalMinor) -> [String] {
         
         switch scale {
             
@@ -75,7 +75,7 @@ class GWNotes : GWNotesProtocol {
         
     }
     
-    public static func from(_ scale : GWScale.HarmonicMinor) -> [String] {
+    public static func of(_ scale : GWScale.HarmonicMinor) -> [String] {
         
         switch scale {
             
@@ -108,7 +108,7 @@ class GWNotes : GWNotesProtocol {
         
     }
     
-    public static func from(_ scale : GWScale.MelodicMinor) -> [String] {
+    public static func of(_ scale : GWScale.MelodicMinor) -> [String] {
         
         switch scale {
             

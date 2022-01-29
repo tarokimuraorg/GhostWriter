@@ -9,9 +9,9 @@ import Foundation
 
 protocol GWNotesProtocol {
     
-    static func from(_ scale : GWScale.Major) -> [String]
-    static func from(_ scale : GWScale.NaturalMinor) -> [String]
-    static func from(_ scale : GWScale.HarmonicMinor) -> [String]
-    static func from(_ scale : GWScale.MelodicMinor) -> [String]
+    static func of(_ scale : GWScale.Major) -> [String]
+    static func of(_ scale : GWScale.NaturalMinor) -> [String]
+    static func of(_ scale : GWScale.HarmonicMinor) -> [String]
+    static func of(_ scale : GWScale.MelodicMinor) -> [String]
     
 }
